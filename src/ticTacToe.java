@@ -41,10 +41,12 @@ public class ticTacToe {
 
             checkWinner();
             String result = checkWinner();
-            System.out.println(result);
+            if(result.length() > 0) {
+                System.out.println(result);
+                break;
+            }
         }
     }
-
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
 
