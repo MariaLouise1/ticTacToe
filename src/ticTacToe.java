@@ -7,11 +7,13 @@ public class ticTacToe {
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
 
     public static void main(String[] args) {
-        char[][] gameBoard = {{' ', '|', ' ', '|', ' '},
+        char[][] gameBoard = {
+                {' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-'},
                 {' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-'},
-                {' ', '|', ' ', '|', ' '}};
+                {' ', '|', ' ', '|', ' '}
+        };
         printGameBoard(gameBoard);
 
         while (true) {
@@ -28,6 +30,8 @@ public class ticTacToe {
             printGameBoard(gameBoard);
 
             checkWinner();
+            String result = checkWinner();
+            System.out.println(result);
         }
     }
 
@@ -38,8 +42,10 @@ public class ticTacToe {
 
         if (user.equals("player")) {
             symbol = 'X';
+            playerPositions.add(playerPos);
         } else if (user.equals("cpu")) {
             symbol = '0';
+            cpuPositions.add(playerPos);
         }
 
         switch (playerPos) {
@@ -47,10 +53,10 @@ public class ticTacToe {
                 gameBoard[0][0] = symbol;
                 break;
             case 2:
-                gameBoard[0][1] = symbol;
+                gameBoard[0][2] = symbol;
                 break;
             case 3:
-                gameBoard[0][2] = symbol;
+                gameBoard[0][4] = symbol;
                 break;
             case 4:
                 gameBoard[2][0] = symbol;
